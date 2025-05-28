@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: nocodb
+    env: docker
+    plan: free
+    dockerfilePath: ./Dockerfile
+    envVars:
+      - key: NC_DB
+        value: sqlite
+    disk:
+      name: nocodb-data
+      mountPath: /usr/app/data
+      sizeGB: 1
