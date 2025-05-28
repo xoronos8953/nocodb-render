@@ -1,14 +1,5 @@
-# Use a Node.js base image
-FROM node:18-alpine
+# Use the official NocoDB Docker image
+FROM nocodb/nocodb:latest
 
-# Create app directory
-WORKDIR /app
-
-# Install NocoDB globally
-RUN npm install -g nocodb
-
-# Expose default NocoDB port
+# Expose the NocoDB port
 EXPOSE 8080
-
-# Run NocoDB
-CMD ["nocodb"]
